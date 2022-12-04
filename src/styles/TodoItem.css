@@ -1,0 +1,21 @@
+.TodoItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-radius: 8px;
+  color: rgb(20, 20, 20);
+  border: 1px solid rgb(146, 146, 146);
+}
+
+.TodoItem input{
+  width: 40px;
+  height: 40px;
+}
+
+.TodoItem .status{
+  padding: 4px 16px;
+  border-radius: 8px;
+  color: rgb(8, 141, 250);
+  background-color: rgba(68, 170, 254, 0.308);
+}

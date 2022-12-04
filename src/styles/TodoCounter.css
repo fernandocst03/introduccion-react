@@ -1,0 +1,13 @@
+.todoCounter-title{
+  margin-top: 200px;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+.todoCounter{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 200;
+  color: rgb(163, 163, 163);
+}

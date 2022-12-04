@@ -1,0 +1,18 @@
+.TodoMessage{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(23, 23, 23);
+}
+
+.TodoMessage h4{
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.TodoMessage p{
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(145, 136, 136);
+}
