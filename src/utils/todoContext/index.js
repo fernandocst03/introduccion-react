@@ -5,13 +5,14 @@ import { useLocalStorage } from "./useLocalStorage";
 const TodoContext = React.createContext();
 
 function TodoProvaider(props) {
-  const {
+  const { 
     item: todos,
     saveItem: saveTodos,
     loading,
     error,
-  } = useLocalStorage("TODOS_V1", []);
+  } = useLocalStorage("TODOS_V1", []); 
 
+  // estado inicial del modal
   const [openModal, setOpenModal] = useState(false);
   // estado inicial del buscador
   const [searchValue, setSearchValue] = useState("");
@@ -38,9 +39,7 @@ function TodoProvaider(props) {
       complete : false,
       text,
       id: todos.length + 1,
-    })
-
-    console.log(newTodos);
+    });
     saveTodos(newTodos);
   };
 

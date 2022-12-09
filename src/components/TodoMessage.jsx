@@ -11,5 +11,5 @@ function TodoMessage({totalTodos, completedTodos}){
   )
 }
 
-export {TodoMessage}
+export { TodoMessage }
 

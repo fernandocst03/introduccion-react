@@ -7,7 +7,7 @@ function TodoItem(props){
     <li className="TodoItem">
       <input
           type="checkbox"
-          className={props.complete ? "check" : "uncheck"}
+          defaultChecked={props.complete ? true : false}
           onClick={props.onComplete}
         />
       <p>{props.text}</p>
