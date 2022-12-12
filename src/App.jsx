@@ -13,7 +13,7 @@ import { Form } from "./components/Form/Form.jsx";
 import { TodoHeader } from "./components/TodoHeader/TodoHeader.jsx";
 import { TodoMessage } from "./components/TodoMessage/TodoMessage.jsx";
 import { TodoContext } from "./utils/todoContext";
-import { ChangeAlertWithStorageListener } from "./components/ChangeAlert/ChangeAlert.jsx";
+import { ChangeAlert } from "./components/ChangeAlert/ChangeAlert.jsx";
 import "./styles/App.css";
 
 function App() {
@@ -93,7 +93,7 @@ function App() {
 				)}
 
 				<CreateTodoButtom setOpenModal={setOpenModal} />
-				<ChangeAlertWithStorageListener 
+				<ChangeAlert 
 					sincronize={sincronizeTodos}
 				/>
 			</TodoListContainer>
