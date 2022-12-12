@@ -1,7 +1,7 @@
 import React from "react"
-import "../styles/TodoListContainer.css"
+import "./TodoListContainer.css"
 
-function TodoLisContainer(props){
+function TodoListContainer(props){
   return(
     <div className="TodoLisContainer">
       {props.children}
@@ -9,4 +9,4 @@ function TodoLisContainer(props){
   )
 }
 
-export {TodoLisContainer}
+export {TodoListContainer}

@@ -4,11 +4,11 @@ import { useState } from "react";
 function useLocalStorage(itemName, initialValue) {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
-  // estado inicial de la lista de todos
   const [item, setItem] = useState(initialValue);
+  const [sincronizedItem, setSincronizedItem] = useState(false);
 
   React.useEffect(() => {
-    setTimeout(() => {
+    setTimeout(() => {  // simulamos un delay de 2.5 segundos al cargar la lista de todos
       try {
         const localStorageItem = localStorage.getItem(itemName);
         let parsedItem;
@@ -22,11 +22,13 @@ function useLocalStorage(itemName, initialValue) {
 
         setItem(parsedItem);
         setLoading(false);
+        setSincronizedItem(true);
+
       } catch (error) {
         setError(error);
       }
-    }, 1000);
-  });
+    },2500); // al mandarle un [] como segundo argumento, se ejecuta solo una vez el compoenente
+  }, [sincronizedItem]);
 
   const saveItem = (newItem) => {
     try {
@@ -38,7 +40,12 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
-  return { item, saveItem, loading, error };
+  const sincronizeItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
+  }
+
+  return { item, saveItem, loading, error , sincronizeItem};
 }
 
 export { useLocalStorage };

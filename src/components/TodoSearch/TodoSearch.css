@@ -15,3 +15,7 @@
 .TodoSearch::placeholder{
   color: rgb(216, 219, 219);
 }
+.TodoSearch:disabled{
+  background-color: rgba(38, 40, 53, 0.397);
+  border: rgba(127, 127, 127, 0.504) 1px solid;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/CreateTodoButtom.css"
+import "./CreateTodoButtom.css"
 
 function CreateTodoButtom({setOpenModal}){
   const click = () => {

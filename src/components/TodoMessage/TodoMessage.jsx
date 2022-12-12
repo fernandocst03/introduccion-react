@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/TodoMessage.css"
+import "./TodoMessage.css"
 
 function TodoMessage({totalTodos, completedTodos}){
   return (

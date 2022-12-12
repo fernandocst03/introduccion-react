@@ -8,18 +8,16 @@ function TodoProvaider(props) {
   const { 
     item: todos,
     saveItem: saveTodos,
+    sincronizeItem: sincronizeTodos,
     loading,
     error,
   } = useLocalStorage("TODOS_V1", []); 
 
-  // estado inicial del modal
+
   const [openModal, setOpenModal] = useState(false);
-  // estado inicial del buscador
   const [searchValue, setSearchValue] = useState("");
-  // estado inicial del contador de tareas completadas
   const completedTodos = todos.filter((todo) => !!todo.complete).length;
   const totalTodos = todos.length;
-  // array para guardar los todos que coincidan con el valor del buscador
   let searchedTodos = [];
 
   if (!searchValue.length >= 1) {
@@ -33,7 +31,6 @@ function TodoProvaider(props) {
   }
 
   const addTodo = (text) => {
-    // buscamos la posicion del todo que coincida con el id
     const newTodos = [...todos];
     newTodos.push({
       complete : false,
@@ -44,7 +41,6 @@ function TodoProvaider(props) {
   };
 
   const completeTodo = (id) => {
-    // buscamos la posicion del todo que coincida con el id
     const todoIndex = todos.findIndex((todo) => todo.id === id);
     const newTodos = [...todos];
     newTodos[todoIndex].complete = !newTodos[todoIndex].complete;
@@ -71,6 +67,7 @@ function TodoProvaider(props) {
       deleteTodo,
       openModal,
       setOpenModal,
+      sincronizeTodos
     }}>{props.children}
     </TodoContext.Provider>
   );
