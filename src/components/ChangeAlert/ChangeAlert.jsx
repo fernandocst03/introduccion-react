@@ -1,14 +1,17 @@
 import React from "react";
 import { useStorageListener } from "./useStorageListener";
+import "./ChangeAlert.css";
 
 function ChangeAlert({sincronize}) {
    const { show, toggleShow } = useStorageListener(sincronize);
 
    if (show) {
       return (
-         <div>
-            <p>Hubo hubo cambios</p>
-            <button onClick={toggleShow}>Volver a cargar la información</button>
+         <div className="changeAlert">
+            <div className="alertMessage">
+               <p>Hubo cambios</p>
+               <button onClick={toggleShow}>Actualizar la información</button>
+            </div>
          </div>
       );
    } else {

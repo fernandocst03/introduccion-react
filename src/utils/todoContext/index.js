@@ -18,6 +18,7 @@ function TodoProvaider(props) {
   const [searchValue, setSearchValue] = useState("");
   const completedTodos = todos.filter((todo) => !!todo.complete).length;
   const totalTodos = todos.length;
+
   let searchedTodos = [];
 
   if (!searchValue.length >= 1) {
@@ -53,6 +54,8 @@ function TodoProvaider(props) {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
+
+  
   return (
     <TodoContext.Provider value={{
       loading,
